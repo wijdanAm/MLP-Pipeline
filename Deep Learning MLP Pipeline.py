@@ -59,9 +59,12 @@ parameters are: numbre of hidden layers and activation function, for alpha value
 alpha = 0.0001 solver = 'adam'
 """
 model = MLPClassifier(
-                    hidden_layer_sizes=(10,),
-                    activation = "logistic"
-                    )
+    hidden_layer_sizes=(50,) * 10,  # 10 couches cachées avec 50 neurones chacune
+    activation="logistic",            # Fonction d'activation sigmoïde
+    max_iter=1000,                    # Nombre maximal d'itérations pour l'entraînement
+    solver="adam",                    # Optimiseur pour l'entraînement
+    random_state=42                   # Pour la reproductibilité des résultats
+)
 
 #model.fit(X_train[:,3:], y_train)
 """
